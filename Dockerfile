@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:latest
 LABEL maintainer="Igor Vinokurov <zynaps@zynaps.ru>"
 
 RUN \
