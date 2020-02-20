@@ -7,12 +7,6 @@ RUN \
 
 WORKDIR /
 
-COPY rootfs entrypoint.sh ./
-
-EXPOSE 25/tcp
-
-VOLUME ["/etc/postfix", "/var/spool/postfix"]
-
-ENTRYPOINT ["/entrypoint.sh"]
+COPY rootfs ./
 
 CMD ["s6-svscan", "/etc/s6"]
