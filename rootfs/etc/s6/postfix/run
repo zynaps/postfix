@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec postfix -v start-fg

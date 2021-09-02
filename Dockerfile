@@ -1,12 +1,9 @@
-FROM alpine:latest
-LABEL maintainer="Igor Vinokurov <zynaps@zynaps.ru>"
+FROM alpine
 
 RUN \
   set -xe && \
-  apk add --no-cache s6 rsyslog postfix postfix-pcre
+  apk add --no-cache postfix postfix-pcre
 
-WORKDIR /
+COPY . /
 
-COPY rootfs ./
-
-CMD ["s6-svscan", "/etc/s6"]
+CMD ["sh", "/run.sh"]
